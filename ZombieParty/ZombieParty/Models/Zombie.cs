@@ -1,11 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System.Drawing;
 
 namespace ZombieParty.Models
 {
     public class Zombie
     {
+        
         public int Id { get; set; }
 
         [StringLength(20, MinimumLength = 5)]
@@ -29,5 +31,8 @@ namespace ZombieParty.Models
 
         [ValidateNever] 
         public virtual List<HuntingLog> HuntingLogs { get; set; }
+        [ValidateNever]
+        public string Image { get; set; }
+
     }
 }
